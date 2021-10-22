@@ -13,5 +13,6 @@
 
 <h1> my name is Sebastian xd </h1>
 <p> Hello </p>
+<a href="Rolcontroler?accion=Listarusuarios" class="btn btn-primary" role="button"> Ir al listado de usuarios </a>
 </body>
 </html>

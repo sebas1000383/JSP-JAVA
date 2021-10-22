@@ -21,27 +21,33 @@ public class Roldao {
 	// Methods to perfom operations over database 
 	public List Listarusuarios() throws SQLException {
 	List<RolVo> Usuarios= new ArrayList<>();
-	sql="SELECT * FROM tbusuario";
+	sql="SELECT * FROM  tbusuario";
 	try {
-		con=c.conectar(); // opening the connection to database 
+		con=c.getConnection(); // opening the connection to database 
 		ps=con.prepareStatement(sql); // prepare that sentence 
 		ps.executeQuery(sql); // en sentencias select siempre va el executeQuery
+		rs=ps.executeQuery();
+		
 		// y el execute update va a ser utilizado en sentencias  de insert,update y delete.
+		
 	while (rs.next()) {
 		
 		RolVo r = new RolVo();
-		r.setIdusuario(rs.getInt("Idusuario")); // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener
+		r.setIdusuario(rs.getInt("idusuario")); // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener
 		r.setNombreUsuario(rs.getString("NombreUsuario"));
-		r.setApellidoUsuario(rs.getString("ApellidoUsuario"));
+		r.setApellidoUsuario(rs.getString("ApellidoUsuario")); 
 		r.setContraseña(rs.getString("contraseña"));
 		r.setCorreo(rs.getString("correo"));
+	
+		
+		
 		
 		Usuarios.add(r);
 		System.out.println("Consulta exitosa ");
-		ps.close();
 		
 		
 	}
+	ps.close();
 		
 		
 	} catch (Exception e) {

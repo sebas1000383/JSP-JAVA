@@ -32,10 +32,14 @@ public class Rolcontroler extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String accion =request.getParameter("accion");
+		System.out.print("Entro al controlador esta vez  ");
+		
 		try {
 			if (accion!=null) {
 				switch (accion) {
 				case "Listarusuarios":
+					System.out.print("Entro a la opcion listar ");
+					
 					Listarusuarios(request,response);
 					
 					break;
@@ -66,10 +70,15 @@ public class Rolcontroler extends HttpServlet {
 		Roldao rdao= new Roldao();
 		RolVo r =  new RolVo();
 		try {
-			 List rol =rdao.Listarusuarios();
-			 request.setAttribute("usuarios", rol);// esto es para enviar los resultados de la busqueda 
-			 request.getRequestDispatcher("views/Rol.jsp"); // esto es para especificar adonde quiero enviar los datos de una vista 
+			System.out.print("Entro al metodo listarusuarios ");
 			
+			
+		
+			 List rol =rdao.Listarusuarios();
+			 request.setAttribute("usuarios", rol);// esto es para enviar los resultados de la busqueda
+			
+			 request.getRequestDispatcher("prueba.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			.forward(request, response);
 			
 		} catch (Exception e) {
 			

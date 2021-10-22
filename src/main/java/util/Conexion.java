@@ -1,27 +1,41 @@
 package util;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
 
 public class Conexion {
-	// attribute definition 
-	private static final String bd="jdbc:mysql://localhost:3306/ejemplo";
-	private static final String username="root";
-	private static final String password="";
-	private static  Connection con;
-	// METHOD OF CONECCTION 
-	public static  Connection conectar () {
-		try {
-			 Class.forName("com.mysql.cj.jdbc.Driver");
-			 con=DriverManager.getConnection(bd, username, password); 
-			 System.out.println("Conexión exitosa ");
-			 
-		} catch (Exception e) {
-			System.out.println("Falla de conexión "+e.getMessage().toString());
-		}
-		return con;
-	}
-	
+	  private static final String USERNAME="root";
+	    private static final String PASSWORD="";
+	    private static final String HOST="localhost";
+	    private static final String PORT="3306";
+	    private static final String DATABASE="prueba";
+	    private static final String CLASSNAME="com.mysql.cj.jdbc.Driver";
+	    private static final String URL="jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE;
+	    private Connection con;
+	    public Conexion()
+	    {
+	        try 
+	        {
+	          Class.forName(CLASSNAME);
+	          con=DriverManager.getConnection(URL, USERNAME, PASSWORD);         
+	        } 
+	        catch (ClassNotFoundException e) 
+	        {       
+	            System.err.println("ERROR"+e);
+	        }
+	        catch(SQLException e)
+	        {
+	            System.err.println("ERROR"+e);
+	        }
+	    }
+	    public Connection getConnection()
+	    {
+	        return con;
+	    }
+	    
+	   
 	
 }
 
