@@ -34,9 +34,16 @@ public class Conexion {
 	    {
 	        return con;
 	    }
+	   
 	    
 	   
 	
+
+public static void main (String args) {
+	
+
+System.out.println("Se registro un usuario ");
+}
 }
 
 

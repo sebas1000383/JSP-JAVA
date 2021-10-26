@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies>
-  <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+  <!-- https://mvnrepository.com/artifact/jsavax.servlet/javax.servlet-api -->
 <dependency>
 
     <groupId>javax.servlet</groupId>

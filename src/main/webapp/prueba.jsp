@@ -10,13 +10,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="Rolcontroler?accion=Agregarusuarios" class="btn btn-primary" role="button"> Agregar nuevo usuario  </a>
 <h1> Listado de usuarios </h1>
+
 <table  class="table table-dark table-striped">
 <tr>
 <th> Id</th>
 <th> Nombre </th>
 <th> Apellido </th>
 <th> Correo </th>
+
 
 </tr>
 
