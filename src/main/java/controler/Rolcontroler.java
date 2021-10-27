@@ -51,6 +51,7 @@ public class Rolcontroler extends HttpServlet {
 					break;
 				case "Nuevousuario":
 					Nuevousuario(request,response);
+					break;
 					
 
 				default:
@@ -133,14 +134,18 @@ private  void Nuevousuario (HttpServletRequest request, HttpServletResponse resp
 		
 	}
 	
+	
+	
 	try {
 		 System.out.print(" Entro al metodo Registrar "+request.getParameter("nombre")+request.getParameter("correo")+request.getParameter("apellido")+request.getParameter("contraseña"));
 		 
 		 rdao.registrar(r);
+		 response.sendRedirect("Rolcontroler?accion=Listarusuarios");
 		 
 	
-	 request.getRequestDispatcher("Registrar.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-	.forward(request, response);
+	
+	 
+     
 }
 	 catch (Exception e) {
 		
