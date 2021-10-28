@@ -52,6 +52,8 @@ public class Rolcontroler extends HttpServlet {
 				case "Nuevousuario":
 					Nuevousuario(request,response);
 					break;
+				case "delete":
+					delete(request,response);
 					
 
 				default:
@@ -153,4 +155,36 @@ private  void Nuevousuario (HttpServletRequest request, HttpServletResponse resp
 		
 }
 }
+
+
+private  void delete (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	if (request.getParameter("id") !=null) {
+		r.setIdusuario(Integer.parseInt(request.getParameter("id")));
+		System.out.println("LLego el nombre ");
+	}
+		
+	
+	
+	
+	
+	try {
+		 System.out.print(" Entro al metodo elimijar "+request.getParameter("nombre")+request.getParameter("correo")+request.getParameter("apellido")+request.getParameter("contraseña"));
+		 
+		 rdao.eliminar(r.getIdusuario());
+		 response.sendRedirect("Rolcontroler?accion=Listarusuarios");
+		 
+	
+	
+	 
+     
 }
+	 catch (Exception e) {
+		
+		 System.out.print(" no Entro al metodo eliminar");
+		
+	 }
+}
+}
+
+
+

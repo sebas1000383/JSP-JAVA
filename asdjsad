@@ -1,0 +1,47 @@
+[33mcommit 29b1e153013fdee5127261e02ca1ecaac6c61e76[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Sebastián Méndez Montealegre <smendez67@misena.edu.co>
+Date:   Wed Oct 27 11:34:56 2021 -0500
+
+    Se logro el metodo de registrar satisfactoriamente
+
+[33mcommit 5a98b23a14a0f381a36388a2b304d1249864103c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Sebastián Méndez Montealegre <smendez67@misena.edu.co>
+Date:   Tue Oct 26 14:46:42 2021 -0500
+
+    Falta probar el metodo de registrar
+
+[33mcommit 6a6b280077980f31075df80434290204e83162a0[m
+Author: Sebastián Méndez Montealegre <smendez67@misena.edu.co>
+Date:   Fri Oct 22 02:04:58 2021 -0500
+
+    Se logro n.n
+
+[33mcommit ef303753d40488d6d7304379c13cdf8bf36c62ef[m
+Author: SEBASTIAN <sed9912@gmail.com>
+Date:   Sat Oct 16 23:36:28 2021 -0500
+
+    Solucionamos el error de la importación de la librería
+
+[33mcommit b3a6d09b0281cd716c23ee6144b7bf7e1699a519[m
+Author: SEBASTIAN <sed9912@gmail.com>
+Date:   Sat Oct 16 22:54:29 2021 -0500
+
+    Nos esta saliendo un error a la hora de instalar una libreria
+
+[33mcommit c700b1da017920b45f54f8c5de221b8d792c6131[m
+Author: SEBASTIAN <sed9912@gmail.com>
+Date:   Sat Oct 16 21:37:05 2021 -0500
+
+    Agregamos una hoja de estilos, andamos estructurando el modelo de la vista
+
+[33mcommit de6c3ea9d87032d9c3474b6de491a327b4edce8e[m[33m ([m[1;33mtag: Primeraversion[m[33m)[m
+Author: SEBASTIAN <sed9912@gmail.com>
+Date:   Sat Oct 16 21:22:50 2021 -0500
+
+    Ya tenemos todos los metodos y los datos guardados en una list, ahora nos falta hacer las vistas y probar que funcionan
+
+[33mcommit 1c6a7a71cbe47d2725be6347f0c73127fb39c75c[m
+Author: SEBASTIAN <sed9912@gmail.com>
+Date:   Sat Oct 16 00:21:10 2021 -0500
+
+    Tenemos la conexion, y andamos preparando los metodos para hacer una consulta en modelo  mvc

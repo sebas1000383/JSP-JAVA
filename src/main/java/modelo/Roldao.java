@@ -19,6 +19,7 @@ public class Roldao {
 	String sql;
 	Conexion c= new Conexion();
 	int register;
+	int id;
 	
 	
 	// Methods to perfom operations over database 
@@ -67,24 +68,18 @@ public class Roldao {
 	return Usuarios;
 		
 	}
-	public int  registrar(RolVo r) throws SQLException {
+	public int eliminar(int id) throws SQLException {
 		System.out.println("Entro a la sentencia preparada  ");
-		sql="INSERT INTO tbusuario(NombreUsuario,ApellidoUsuario,correo,contraseña) VALUES (?,?,?,?)";
+		sql="delete from tbusuario WHERE  idusario="+id;
 		try {
 			con=c.getConnection(); // opening the connection to database 
 			ps=con.prepareStatement(sql); // prepare that sentence 
-			
-		    ps.setString(1, r.getNombreUsuario());
-			ps.setString(2, r.getApellidoUsuario());
-			ps.setString(3, r.getCorreo());
-			ps.setString(4, r.getContraseña());
+		
 			System.out.println(ps);
-			if (ps.executeUpdate()==1) {
-				System.out.print("Se afecto el nombre");
+			
 				
 				
-				
-			}
+			
 			
 		
 			
@@ -99,11 +94,65 @@ public class Roldao {
 			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.                                                                                      
 		// El siguiente paso es asignar los valores de este interrogante 
 	
-		System.out.println("Se registro un usuario ");
+		System.out.println("Se elimino  un usuario ");
 	
 			
-			
+		
 		} 
+		catch (Exception e) {
+			System.out.print("Error al eliminar usuario ");
+		}
+		return id;
+			// TODO: handle exception
+		}	
+
+
+	
+
+	
+	
+	
+	
+		
+		public int  registrar(RolVo r) throws SQLException {
+			System.out.println("Entro a la sentencia preparada  ");
+			sql="INSERT INTO tbusuario(NombreUsuario,ApellidoUsuario,correo,contraseña) VALUES (?,?,?,?)";
+			try {
+				con=c.getConnection(); // opening the connection to database 
+				ps=con.prepareStatement(sql); // prepare that sentence 
+				
+			    ps.setString(1, r.getNombreUsuario());
+				ps.setString(2, r.getApellidoUsuario());
+				ps.setString(3, r.getCorreo());
+				ps.setString(4, r.getContraseña());
+				System.out.println(ps);
+				if (ps.executeUpdate()==1) {
+					System.out.print("Se afecto el nombre");
+					
+					
+					
+				}
+				
+			
+				
+				
+				
+				
+				ps.executeUpdate(sql); // en sentencias select siempre va el executeQuery 
+				System.out.print("Ya hizo la consulta  ");
+				// Solo las consultas se guardan en un resulset 
+				System.out.println("Entro a la consulta  ");
+				
+				// y el execute update va a ser utilizado en sentencias  de insert,update y delete.                                                                                      
+			// El siguiente paso es asignar los valores de este interrogante 
+		
+			System.out.println("Se registro un usuario ");
+		
+				
+				
+			} 
+			                        
+			
 		                        
 		
 		

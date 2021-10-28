@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="CSS/Estilos.css"> 
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -19,6 +20,8 @@
 <th> Nombre </th>
 <th> Apellido </th>
 <th> Correo </th>
+<th> Eliminar </th>
+<th> Editar </th>
 
 
 </tr>
@@ -30,7 +33,11 @@
 	<td>${r.getIdusuario()}</td>
 	<td>${r.getNombreUsuario()}</td>
 	<td>${r.getApellidoUsuario ()}</td>
-	<td>${r.getCorreo ()}</td>
+	<td>${r.getCorreo ()} </td>
+	<td> <a class="btn btn-danger" href="Rolcontroler?accion=delete&id=${r.getIdusuario()}" role="button">Eliminar </a></td>
+	<td><a class="btn btn-warning" href="" role="button">Editar </a> </td>
+
+	
 	
 	
 	</tr>
